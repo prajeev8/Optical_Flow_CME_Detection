@@ -92,5 +92,5 @@ You can install the required Python packages using:
 pip install astropy numpy opencv-python matplotlib
 ```
 
-##Conclusion
+## Conclusion
 This workflow allows for effective processing and analysis of solar observation data, enabling the visualization of coronal mass ejections (CMEs) and other solar phenomena through optical flow techniques. By following the outlined steps, you can generate and analyze difference images to study the dynamics of solar events.
