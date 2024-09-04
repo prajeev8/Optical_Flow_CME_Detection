@@ -117,8 +117,8 @@ def plot_velocity_vectors_on_original_frames(frames, magnitudes, u_list, v_list,
 
 def main():
 
-    frames_folder = "21 sept difference images" 
-    folder_name = "21st sept"
+    frames_folder = "21 sept difference images" # Give the name of the folder with difference images. Usually, it is saved as the date_difference images.
+    folder_name = "21st sept" # For ease of finding, provide the date 
     noisy_frames = load_frames_from_folder(frames_folder)
     denoised_frames = [reduce_noise(frame) for frame in noisy_frames]
     
