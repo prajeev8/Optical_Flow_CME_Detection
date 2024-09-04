@@ -35,7 +35,7 @@ def create_circular_mask(shape, center, radius):
     mask = dist_from_center <= radius
     return mask
 
-def create_difference_imgs(images, headers, folder_name):
+def create_difference_imgs(images, headers, date):
     difference_images = []
     for i in range(len(images) - 1):
         img1 = images[i]
@@ -60,15 +60,15 @@ def create_difference_imgs(images, headers, folder_name):
         fig, ax = plt.subplots(figsize=(11, 11))
         cax = ax.imshow(np.rot90(diff_img), vmin = vmin, vmax = vmax) 
         ax.axis('off')
-        os.makedirs(f"{folder_name} difference images", exist_ok=True)
-        plt.savefig(f"{folder_name} difference images/difference_image{i:02d}.png", bbox_inches='tight', pad_inches=0)
+        os.makedirs(f"{date}_difference_images", exist_ok=True)
+        plt.savefig(f"{date}_difference_images/difference_image{i:02d}.png", bbox_inches='tight', pad_inches=0)
         plt.show()
         frames.append(np.array(fig))
 
-fits_data = "21 sept"
-folder_name = "21_sept"
+fits_data = "folder_with_solar_fits_data" # Give the name of the folder where the data is stored
+date = "date_of_the_event" # Type in the date for ease of finding the folder
 images, headers = open_fits_file(fits_data)
-create_difference_imgs(images, headers, folder_name)
+create_difference_imgs(images, headers, date)
 
 
 
